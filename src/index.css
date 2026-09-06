@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Breeze (light). Channel triplets so Tailwind opacity modifiers work. */
+  :root {
+    --desktop: 217 220 222;
+    --surface: 239 240 241;
+    --view: 252 252 252;
+    --edge: 189 195 199;
+    --fg: 35 38 41;
+    --dim: 127 140 141;
+    --accent: 61 174 233;
+    --danger: 218 68 83;
+  }
+
+  /* Breeze Dark. */
+  .dark {
+    --desktop: 27 30 32;
+    --surface: 49 54 59;
+    --view: 35 38 41;
+    --edge: 60 66 71;
+    --fg: 239 240 241;
+    --dim: 127 140 141;
+    --accent: 61 174 233;
+    --danger: 218 68 83;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-desktop font-sans text-[0.9375rem] text-fg antialiased;
+  }
+
+  ::selection {
+    @apply bg-accent text-white;
+  }
+
+  :focus-visible {
+    @apply outline outline-2 outline-offset-1 outline-accent;
+  }
+
+  /* Breeze scrollbars: thin, quiet, no arrows. */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(var(--dim) / 0.5) transparent;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: rgb(var(--dim) / 0.5);
+    border-radius: 5px;
+    border: 2px solid transparent;
+    background-clip: content-box;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(var(--accent));
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  .section-title {
+    @apply text-xs font-semibold uppercase tracking-[0.12em] text-dim;
+  }
+
+  /* Breeze pushbutton */
+  .breeze-button {
+    @apply inline-flex items-center gap-2 rounded-breeze border border-edge bg-surface px-3 py-1.5
+      text-sm transition-colors hover:border-accent hover:bg-accent/10;
+  }
+
+  .breeze-button-primary {
+    @apply inline-flex items-center gap-2 rounded-breeze border border-accent bg-accent px-3 py-1.5
+      text-sm text-white transition-opacity hover:opacity-90;
+  }
+
+  /* Small tag, as used in Breeze list views */
+  .breeze-tag {
+    @apply rounded-breeze border border-edge bg-view px-2 py-0.5 font-mono text-xs text-dim;
+  }
+}
