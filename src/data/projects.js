@@ -1,5 +1,17 @@
 const projects = [
   {
+    title: 'Cramcat',
+    year: 'Sep 2026',
+    emoji: '🐱',
+    summary:
+      'Turns a PDF — lecture slides, a chapter, a paper — into a one-page cheat sheet or full study notes, streamed live as the model writes.',
+    detail:
+      "A single Vercel serverless function talking to Gemini, with a plain-HTML frontend and no build step. The interesting problems were at the edges: Vercel caps uploads at 4.5 MB, so large PDFs are parsed in the browser with pdf.js and sent as text; the free Gemini tier has per-model daily quotas, so it makes exactly one request per click, rate-limits by IP, and falls back to a second model only when the primary's quota is genuinely exhausted. Output is Markdown with LaTeX, rendered live with KaTeX and exportable to a compact A4 PDF or a two-column print layout.",
+    tech: ['JavaScript', 'Node.js', 'Gemini API', 'Vercel Serverless', 'Server-Sent Events', 'pdf.js', 'KaTeX'],
+    repoUrl: '',
+    liveUrl: 'https://cramcat.vercel.app',
+  },
+  {
     title: 'Sound-Track',
     year: 'Aug 2026',
     emoji: '🎧',
