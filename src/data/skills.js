@@ -1,7 +1,7 @@
 const skillGroups = [
   {
     category: 'Languages',
-    items: ['Python', 'JavaScript', 'TypeScript', 'C#', 'Java', 'C++', 'SQL', 'HTML', 'CSS'],
+    items: ['Python', 'JavaScript', 'TypeScript', 'Rust', 'C#', 'Java', 'C++', 'SQL', 'HTML', 'CSS'],
   },
   {
     category: 'Backend & APIs',
@@ -29,10 +29,33 @@ const skillGroups = [
     ],
   },
   {
+    category: 'Desktop & Mobile',
+    items: [
+      'Tauri',
+      'React Native',
+      'Expo (expo-router, expo-video)',
+      'Native iOS UI (Liquid Glass, NativeTabs, SF Symbols)',
+      'Picture-in-Picture',
+      'Sideload builds via GitHub Actions (macOS runners)',
+    ],
+  },
+  {
+    category: 'Media & Playback',
+    items: [
+      'mpv (subprocess, JSON IPC)',
+      'Hardware-accelerated decode',
+      'HDR (HDR10, HDR10+, HLG, Dolby Vision)',
+      'HLS / fMP4 remux',
+      'Codec device profiles (H.264, HEVC)',
+      'Jellyfin API',
+    ],
+  },
+  {
     category: 'Frontend',
     items: [
       'React',
       'Next.js',
+      'SvelteKit',
       'Vanilla JS (no build step)',
       'Markdown rendering (marked + DOMPurify)',
       'KaTeX',

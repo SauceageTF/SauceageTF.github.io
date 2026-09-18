@@ -1,5 +1,29 @@
 const projects = [
   {
+    title: 'FastFin',
+    year: 'Sep 2026',
+    emoji: '🎬',
+    summary:
+      'A fast, lightweight Windows desktop client for Jellyfin, with video rendered by a real mpv process rather than a browser <video> tag.',
+    detail:
+      "Tauri uses the OS's own WebView2 instead of shipping a Chromium copy, so the install is small and idle memory low. Playback is a separate hardware-decoding mpv process driven over a native window handle and a JSON IPC pipe — proper HDR and broad codec support, and no browser tone-mapping loss. The always-on-top HUD is a tiny transparent overlay window composited above the video at the OS level, so the frame is never redrawn to make room for controls; Picture-in-Picture just detaches and shrinks that same native window.",
+    tech: ['Rust', 'Tauri', 'SvelteKit', 'mpv', 'WebView2'],
+    repoUrl: 'https://github.com/SauceageTF/FastFin',
+    liveUrl: '',
+  },
+  {
+    title: 'FastFin for iOS',
+    year: 'Sep 2026',
+    emoji: '📱',
+    summary:
+      'The Jellyfin client for iPhone — direct-play HEVC and HDR, native Liquid Glass UI, Picture-in-Picture, and no Mac required to ship it.',
+    detail:
+      "A DeviceProfile describes exactly what AVFoundation can decode (H.264, HEVC Main/Main 10 with HDR10, HDR10+, HLG, Dolby Vision) so the server remuxes HEVC out of MKV into fMP4 HLS instead of re-encoding — the auth header format was verified against Jellyfin's own Swift SDK, not guessed. The player negotiates PlaybackInfo, falls back to an explicit transcode if the source fails, reports progress to keep Continue Watching in sync, and kills its ffmpeg job on exit. Built on expo-router with NativeTabs and real Liquid Glass on iOS 26; a GitHub Actions macOS runner produces a sideloadable .ipa so no Mac is needed.",
+    tech: ['TypeScript', 'React Native', 'Expo', 'expo-video', 'HLS', 'GitHub Actions'],
+    repoUrl: 'https://github.com/SauceageTF/fastfin-ios',
+    liveUrl: '',
+  },
+  {
     title: 'Cramcat',
     year: 'Sep 2026',
     emoji: '🐱',
